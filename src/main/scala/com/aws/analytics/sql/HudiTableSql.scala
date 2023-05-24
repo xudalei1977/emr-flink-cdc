@@ -3,7 +3,7 @@ package com.aws.analytics.sql
 object HudiTableSql {
   def createTB1(s3Path:String, sinkTB:String)={
       s"""CREATE TABLE $sinkTB(
-         |id string,
+         |id string primary key,
          |name string,
          |device_model string,
          |email string,
@@ -20,6 +20,7 @@ object HudiTableSql {
          |  'write.payload.class' = 'org.apache.hudi.common.model.DefaultHoodieRecordPayload',
          |  'write.keygenerator.class' = 'org.apache.hudi.keygen.NonpartitionedKeyGenerator',
          |  'write.recordkey.field' = 'id',
+         |  'hoodie.datasource.write.recordkey.field' = 'id',
          |  'hive_sync.enable' = 'true',
          |  'hive_sync.mode' = 'hms',
          |  'hive_sync.use_jdbc' = 'false',
@@ -32,7 +33,7 @@ object HudiTableSql {
 
   def createTB2(s3Path:String,sinkTB:String)={
     s"""CREATE TABLE  $sinkTB(
-       |pid string,
+       |pid string primary key,
        |pname string,
        |pprice string,
        |create_time string,
@@ -59,7 +60,7 @@ object HudiTableSql {
 
   def createTB3(s3Path:String, sinkTB:String)={
     s"""CREATE TABLE  $sinkTB(
-       |id string,
+       |id string primary key,
        |oid string,
        |uid string,
        |pid string,
