@@ -24,7 +24,6 @@ object HudiTableSql {
          |  'hive_sync.enable' = 'true',
          |  'hive_sync.mode' = 'hms',
          |  'hive_sync.use_jdbc' = 'false',
-         |  'hive_sync.database' = 'dev',
          |  'hive_sync.table' = '$sinkTB',
          |  'hive_sync.partition_extractor_class' = 'org.apache.hudi.hive.NonPartitionedExtractor'
          |  )
@@ -51,7 +50,6 @@ object HudiTableSql {
        |  'hive_sync.enable' = 'true',
        |  'hive_sync.mode' = 'hms',
        |  'hive_sync.use_jdbc' = 'false',
-       |  'hive_sync.database' = 'dev',
        |  'hive_sync.table' = '$sinkTB',
        |  'hive_sync.partition_extractor_class' = 'org.apache.hudi.hive.NonPartitionedExtractor'
        |  )
@@ -82,7 +80,6 @@ object HudiTableSql {
        |  'hive_sync.enable' = 'true',
        |  'hive_sync.mode' = 'hms',
        |  'hive_sync.use_jdbc' = 'false',
-       |  'hive_sync.database' = 'dev',
        |  'hive_sync.table' = '$sinkTB',
        |  'hive_sync.partition_extractor_class' = 'org.apache.hudi.hive.MultiPartKeysValueExtractor'
        |  )
