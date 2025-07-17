@@ -99,6 +99,18 @@
             <artifactId>flink-connector-kafka</artifactId>
             <version>${flink.version}</version>
             <scope>${scope.type}</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.kafka</groupId>
+                    <artifactId>kafka-clients</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>3.5.1</version>
         </dependency>
 
         <dependency>

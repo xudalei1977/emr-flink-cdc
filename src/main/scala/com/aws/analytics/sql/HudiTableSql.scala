@@ -3,7 +3,7 @@ package com.aws.analytics.sql
 object HudiTableSql {
   def createTB1(s3Path:String, sinkTB:String)={
       s"""CREATE TABLE $sinkTB(
-         |id string primary key,
+         |id string primary key NOT ENFORCED,
          |name string,
          |device_model string,
          |email string,
@@ -33,7 +33,7 @@ object HudiTableSql {
 
   def createTB2(s3Path:String,sinkTB:String)={
     s"""CREATE TABLE  $sinkTB(
-       |pid string primary key,
+       |pid string primary key NOT ENFORCED,
        |pname string,
        |pprice string,
        |create_time string,
@@ -60,7 +60,7 @@ object HudiTableSql {
 
   def createTB3(s3Path:String, sinkTB:String)={
     s"""CREATE TABLE  $sinkTB(
-       |id string primary key,
+       |id string primary key NOT ENFORCED,
        |oid string,
        |uid string,
        |pid string,
